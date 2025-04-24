@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    text-align: center;
+    margin: 1rem;
+    font-size: 3rem;
+}
+
+p {
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    justify-items: space-around;
+
+    .item {
+        transform: scale(1);
+        transition: 0.3s;
+        overflow: hidden;
+        border-radius: 10px;
+        height: 240px;
+        img {
+            transform: scale(1);
+            transition: 5s;
+        }
+        &:hover {
+            transform: scale(1.1);
+            img {
+                transform: scale(2);
+            }
+        }
+    }
+}
+
+.custom-shape-divider-bottom-1598461693 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1598461693 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.custom-shape-divider-bottom-1598461693 .shape-fill {
+    fill: rgba(white, 0.35);
+}

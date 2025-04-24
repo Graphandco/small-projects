@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;700&display=swap');
+$white: #ececec;
+$main-font: 'Assistant', sans-serif;
+$primary: #8d5711;
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $main-font;
+    font-weight: 300;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: black;
+}
+
+h1,
+h2,
+h3 {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1;
+    position: relative;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: -2rem;
+    }
+
+    &:before {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid $primary;
+    }
+
+    &:after {
+        top: calc(-2rem + 5px);
+        left: 20px;
+        width: 60px;
+        height: 1px;
+        background-color: $primary;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    a {
+        display: inline-block;
+        text-transform: uppercase;
+        border: 1px solid;
+        padding: 0.8rem 2rem;
+        transition: 0.3s;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+}
+
+.shade {
+    z-index: -1;
+}
+
+header {
+    height: 100vh;
+    background: black url('images/header-desktop.jpg') no-repeat center right /
+        cover;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    box-sizing: border-box;
+
+    .logo {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        text-transform: lowercase;
+        font-size: 3rem;
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1.5rem;
+        width: 40%;
+
+        .site-title h1 {
+            text-transform: uppercase;
+            font-weight: 100;
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .site-desc {
+            font-size: 1.1rem;
+            opacity: 0.7;
+        }
+
+        .btn a:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+main {
+    background-color: white;
+}
+
+.niceplace {
+    position: relative;
+    .shade {
+        position: absolute;
+        width: 95%;
+        height: 20vw;
+        min-height: 300px;
+        background-color: rgba(black, 0.05);
+        z-index: 1;
+
+        &-1 {
+            top: 10%;
+            left: 0;
+            border-radius: 0 60px 0 0;
+        }
+
+        &-2 {
+            bottom: 0;
+            right: 0;
+            border-radius: 60px 0 0 0;
+        }
+    }
+    .wrapper {
+        padding: 0 5rem;
+        display: grid;
+        column-gap: 3rem;
+        align-items: center;
+        grid-template-areas:
+            'img1 txt1'
+            'txt2 img2';
+
+        .niceplace-text {
+            padding: 2rem;
+
+            h2 {
+                max-width: 300px;
+            }
+        }
+
+        .niceplace-img-1 {
+            grid-area: img1;
+            position: relative;
+            top: -5rem;
+        }
+
+        .niceplace-img-2 {
+            grid-area: img2;
+            margin-top: -50px;
+        }
+
+        .niceplace-text-1 {
+            grid-area: txt1;
+        }
+
+        .niceplace-text-2 {
+            grid-area: txt2;
+        }
+    }
+}
+
+.menu {
+    margin-top: -5rem;
+    background-color: black;
+    color: $white;
+    padding: 10rem 5rem 2rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+
+    .plats {
+        .plat {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-gap: 4rem;
+            justify-items: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 2rem;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 20%;
+                left: 80px;
+                width: 50px;
+                height: 1px;
+                background-color: $primary;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                width: 90%;
+                height: 1px;
+                left: 50%;
+                transform: translateX(-50%);
+                right: 0;
+                bottom: -1rem;
+                opacity: 0.5;
+                background-color: $primary;
+            }
+            img {
+                width: 80px;
+                height: 70px;
+                object-fit: cover;
+                justify-self: right;
+                border-radius: 3px;
+            }
+
+            .desc {
+                p {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.rassembler {
+    position: relative;
+
+    .shade {
+        position: absolute;
+        width: 40vw;
+        top: 0;
+        height: 20vw;
+        min-height: 180px;
+        background-color: rgba(black, 0.05);
+        border-radius: 0 60px 0 0;
+    }
+
+    .wrapper {
+        padding: 5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3rem;
+        align-items: center;
+
+        .lead {
+            padding: 0 3rem;
+            .btn {
+                margin: 1.5rem 1rem 4rem 0;
+                a {
+                    background-color: black;
+                    color: $white;
+                }
+                &:hover a {
+                    background-color: transparent;
+                    color: inherit;
+                }
+            }
+
+            .events {
+                display: grid;
+                grid-template-columns: 1fr;
+                row-gap: 0.4rem;
+
+                .event {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    opacity: 0.4;
+                    position: relative;
+
+                    &:first-child {
+                        opacity: 1;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            width: 150px;
+                            height: 1px;
+                            left: -160px;
+                            top: 50%;
+                            background-color: $primary;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.reservation {
+    padding: 5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    background-image: url('images/burgers.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    color: white;
+
+    .title {
+        position: relative;
+        font-size: 2rem;
+        font-weight: bold;
+        z-index: 1;
+    }
+
+    .btn {
+        position: relative;
+        z-index: 1;
+        transition: 0.3s;
+        &:hover {
+            background-color: white;
+
+            a {
+                color: black;
+            }
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(black, 0.8);
+        z-index: 0;
+    }
+}
+
+footer {
+    padding: 4rem;
+    background-color: black;
+    color: $white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    p {
+        text-transform: uppercase;
+        margin: 0.4rem 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        justify-content: start;
+        background-position-y: 140px;
+        .logo {
+            top: 1rem;
+        }
+
+        .hero {
+            width: 100%;
+            margin-top: 5rem;
+
+            .site-title h1 {
+                font-size: 1.5rem;
+                color: white;
+                font-weight: 300;
+            }
+
+            .site-desc {
+                max-width: 400px;
+                font-size: 1rem;
+            }
+
+            .btn {
+                margin: 0 auto;
+            }
+        }
+    }
+    .niceplace .wrapper {
+        grid-template-areas:
+            'img1'
+            'txt1'
+            'img2'
+            'txt2';
+        row-gap: 4rem;
+        padding: 2rem;
+        .niceplace-img-1 {
+            top: 0;
+        }
+    }
+    .menu {
+        margin-top: 0;
+        padding: 5rem 2rem;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+
+    .rassembler .wrapper {
+        padding: 5rem 2rem;
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+    }
+
+    .reservation {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        padding: 3rem 2rem;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+}
